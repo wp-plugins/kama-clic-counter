@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcc\n"
-"POT-Creation-Date: 2014-09-06 12:17+0500\n"
-"PO-Revision-Date: 2014-09-09 11:05+0500\n"
+"POT-Creation-Date: 2014-09-09 17:10+0500\n"
+"PO-Revision-Date: 2014-09-09 17:10+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Настройки Kama Click Counter"
 msgstr "Kama Click Counter Settings"
 
-#: admin.php:31 admin.php:86
+#: admin.php:31 admin.php:91
 msgid "Вернуться к статистике"
 msgstr "Back to Statistics"
 
@@ -89,7 +89,7 @@ msgstr ""
 msgid "включить виджет WordPress?"
 msgstr "enable WordPress widget?"
 
-#: admin.php:69 admin.php:107
+#: admin.php:69 admin.php:116
 msgid "Сохранить изменения"
 msgstr "Save changes"
 
@@ -105,107 +105,111 @@ msgstr "Sure to reset settings?"
 msgid "Редактирование ссылки"
 msgstr "Link editing"
 
-#: admin.php:97 admin.php:192
+#: admin.php:93
+msgid "Вернуться назад"
+msgstr "Go back"
+
+#: admin.php:106 admin.php:201
 msgid "Клики"
 msgstr "Clicks"
 
-#: admin.php:98
+#: admin.php:107
 msgid "Размер Файла"
 msgstr "File size"
 
-#: admin.php:99
+#: admin.php:108
 msgid "Название Файла"
 msgstr "File name"
 
-#: admin.php:100
+#: admin.php:109
 msgid "Заголовок Файла"
 msgstr "File title"
 
-#: admin.php:101
+#: admin.php:110
 msgid "Описание Файла"
 msgstr "File description"
 
-#: admin.php:102
+#: admin.php:111
 msgid "Ссылка на Файл"
 msgstr "Link to file"
 
-#: admin.php:147
+#: admin.php:156
 msgid "Страница статистики Kama Click Counter"
 msgstr "Kama Click Counter Statistics"
 
-#: admin.php:147
+#: admin.php:156
 msgid "Настройки Плагина"
 msgstr "Plugin Settings"
 
-#: admin.php:158
+#: admin.php:167
 msgid "Очистить фильтр:"
 msgstr "Clear out the filter:"
 
-#: admin.php:159
+#: admin.php:168
 msgid "впишите часть URL..."
 msgstr "type any part of URL..."
 
-#: admin.php:167
+#: admin.php:176
 msgid "Сюда"
 msgstr "Here"
 
-#: admin.php:167
+#: admin.php:176
 msgid "Туда"
 msgstr "There"
 
-#: admin.php:181
+#: admin.php:190
 msgid "Сортировать"
 msgstr "Sort"
 
-#: admin.php:191
+#: admin.php:200
 msgid "Файл"
 msgstr "File"
 
-#: admin.php:193
+#: admin.php:202
 msgid "Кликов/день"
 msgstr "Clicks/day"
 
-#: admin.php:194
+#: admin.php:203
 msgid "Размер"
 msgstr "Size"
 
-#: admin.php:196 admin.php:221
+#: admin.php:205 admin.php:230
 msgid "Пост"
 msgstr "Post"
 
-#: admin.php:198
+#: admin.php:207
 msgid "Аттач"
 msgstr "Attach"
 
-#: admin.php:199
+#: admin.php:208
 msgid "Добавлен"
 msgstr "Added"
 
-#: admin.php:200
+#: admin.php:209
 msgid "Посл. клик"
 msgstr "Last click"
 
-#: admin.php:215 admin.php:222
+#: admin.php:224 admin.php:231
 msgid "Ссылка"
 msgstr "Link"
 
-#: admin.php:217
+#: admin.php:226
 msgid "Найти аналоги"
 msgstr "Find similar"
 
-#: admin.php:219
+#: admin.php:228
 msgid "Изменить"
 msgstr "Edit"
 
-#: admin.php:220
+#: admin.php:229
 msgid "Удалить"
 msgstr "Delete"
 
-#: admin.php:235
+#: admin.php:244
 msgid "да"
 msgstr "yes"
 
-#: admin.php:240
+#: admin.php:249
 msgid "УДАЛИТЬ выбранные ссылки"
 msgstr "DELETE selected links"
 
@@ -249,19 +253,19 @@ msgstr "[link_description]"
 msgid "[edit_link] - УРЛ на редактирование ссылки"
 msgstr "[edit_link] - URL to edit link in admin"
 
-#: kama_click_counter.php:274 kama_click_counter.php:276
+#: kama_click_counter.php:276 kama_click_counter.php:278
 msgid "кликов:"
 msgstr "clicks:"
 
-#: kama_click_counter.php:356
+#: kama_click_counter.php:358
 msgid "редактировать"
 msgstr "edit"
 
-#: kama_click_counter.php:384
+#: kama_click_counter.php:386
 msgid "Настройки"
 msgstr "Settings"
 
-#: kama_click_counter.php:385
+#: kama_click_counter.php:387
 msgid "Статистика"
 msgstr "Statistics"
 

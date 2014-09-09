@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  \n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/kama-clic-counter\n"
-"POT-Creation-Date: 2014-09-09 06:02:23+00:00\n"
+"POT-Creation-Date: 2014-09-09 12:08:50+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,7 +16,7 @@ msgstr ""
 msgid "Настройки Kama Click Counter"
 msgstr ""
 
-#: admin.php:31 admin.php:86
+#: admin.php:31 admin.php:91
 msgid "Вернуться к статистике"
 msgstr ""
 
@@ -73,7 +73,7 @@ msgstr ""
 msgid "включить виджет WordPress?"
 msgstr ""
 
-#: admin.php:69 admin.php:107
+#: admin.php:69 admin.php:116
 msgid "Сохранить изменения"
 msgstr ""
 
@@ -89,107 +89,111 @@ msgstr ""
 msgid "Редактирование ссылки"
 msgstr ""
 
-#: admin.php:97 admin.php:192
+#: admin.php:93
+msgid "Вернуться назад"
+msgstr ""
+
+#: admin.php:106 admin.php:201
 msgid "Клики"
 msgstr ""
 
-#: admin.php:98
+#: admin.php:107
 msgid "Размер Файла"
 msgstr ""
 
-#: admin.php:99
+#: admin.php:108
 msgid "Название Файла"
 msgstr ""
 
-#: admin.php:100
+#: admin.php:109
 msgid "Заголовок Файла"
 msgstr ""
 
-#: admin.php:101
+#: admin.php:110
 msgid "Описание Файла"
 msgstr ""
 
-#: admin.php:102
+#: admin.php:111
 msgid "Ссылка на Файл"
 msgstr ""
 
-#: admin.php:147
+#: admin.php:156
 msgid "Страница статистики Kama Click Counter"
 msgstr ""
 
-#: admin.php:147
+#: admin.php:156
 msgid "Настройки Плагина"
 msgstr ""
 
-#: admin.php:158
+#: admin.php:167
 msgid "Очистить фильтр:"
 msgstr ""
 
-#: admin.php:159
+#: admin.php:168
 msgid "впишите часть URL..."
 msgstr ""
 
-#: admin.php:167
+#: admin.php:176
 msgid "Сюда"
 msgstr ""
 
-#: admin.php:167
+#: admin.php:176
 msgid "Туда"
 msgstr ""
 
-#: admin.php:181
+#: admin.php:190
 msgid "Сортировать"
 msgstr ""
 
-#: admin.php:191
+#: admin.php:200
 msgid "Файл"
 msgstr ""
 
-#: admin.php:193
+#: admin.php:202
 msgid "Кликов/день"
 msgstr ""
 
-#: admin.php:194
+#: admin.php:203
 msgid "Размер"
 msgstr ""
 
-#: admin.php:196 admin.php:221
+#: admin.php:205 admin.php:230
 msgid "Пост"
 msgstr ""
 
-#: admin.php:198
+#: admin.php:207
 msgid "Аттач"
 msgstr ""
 
-#: admin.php:199
+#: admin.php:208
 msgid "Добавлен"
 msgstr ""
 
-#: admin.php:200
+#: admin.php:209
 msgid "Посл. клик"
 msgstr ""
 
-#: admin.php:215 admin.php:222
+#: admin.php:224 admin.php:231
 msgid "Ссылка"
 msgstr ""
 
-#: admin.php:217
+#: admin.php:226
 msgid "Найти аналоги"
 msgstr ""
 
-#: admin.php:219
+#: admin.php:228
 msgid "Изменить"
 msgstr ""
 
-#: admin.php:220
+#: admin.php:229
 msgid "Удалить"
 msgstr ""
 
-#: admin.php:235
+#: admin.php:244
 msgid "да"
 msgstr ""
 
-#: admin.php:240
+#: admin.php:249
 msgid "УДАЛИТЬ выбранные ссылки"
 msgstr ""
 
