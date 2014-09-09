@@ -1,40 +1,34 @@
+# Copyright (C) 2014 
+# This file is distributed under the same license as the  package.
 msgid ""
 msgstr ""
-"Project-Id-Version: kcc\n"
-"POT-Creation-Date: 2014-09-06 12:17+0500\n"
-"PO-Revision-Date: 2014-09-06 12:18+0500\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: en\n"
+"Project-Id-Version:  \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/kama-clic-counter\n"
+"POT-Creation-Date: 2014-09-09 06:02:23+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
-"X-Poedit-Basepath: ../\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-SearchPath-0: .\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 
 #: admin.php:30
 msgid "Настройки Kama Click Counter"
-msgstr "Kama Click Counter Settings"
+msgstr ""
 
 #: admin.php:31 admin.php:86
 msgid "Вернуться к статистике"
-msgstr "Back to Statistics"
+msgstr ""
 
 #: admin.php:37
 msgid ""
-"Шаблон загрузок: то на что будет заменен шоткод <code>[download url=\"URL"
-"\"]</code> в тексте:"
+"Шаблон загрузок: то на что будет заменен шоткод <code>[download url=\"URL\"]"
+"</code> в тексте:"
 msgstr ""
-"Downloads template. This code replaces the shortcode <code>[download url="
-"\"URL\"]</code> in content:"
 
 #: admin.php:44
 msgid "html class ссылки, клики на которую будут считаться."
-msgstr "html class of the link of witch clicks we want to consider."
+msgstr ""
 
 #: admin.php:45
 msgid ""
@@ -42,37 +36,30 @@ msgid ""
 "&gt;текст ссылки&lt;/a&gt;</code> в контенте записи будут считаться. "
 "Оставьте поле пустым, чтобы отключить опцию - маленькая экономия ресурсов."
 msgstr ""
-"Clicks on links with the same code <code>&lt;a class=&quot;count&quot; "
-"href=&quot;#&quot;&gt;link text&lt;/a&gt;</code> will be considered. Leave "
-"the field in order to disable this option - it save little server resourses."
 
 #: admin.php:50
 msgid "не показывать"
-msgstr "don't show"
+msgstr ""
 
 #: admin.php:51
 msgid "в аттрибуте title"
-msgstr "in the title attribute"
+msgstr ""
 
 #: admin.php:52
 msgid "текстом после ссылки"
-msgstr "as text after link"
+msgstr ""
 
 #: admin.php:53
 msgid ""
 "как показывать статистику кликов для ссылок в контенте? <br><small>Отключите "
 "опцию и сэкономьте -1 запрос к базе данных на каждую ссылку!</small>"
 msgstr ""
-"how to display statistics for the links in content? <br><small>Disable this "
-"option and save 1 database query for each link!</small>"
 
 #: admin.php:57
 msgid ""
 "различать ссылки на одинаковые файлы с разных постов. Уберите галочку, чтобы "
 "плагин считал клики с разных постов в одно место."
 msgstr ""
-"distinguish clicks on the same links, but from different posts. Uncheck in "
-"order to count clicks in different posts in one place."
 
 #: admin.php:61
 msgid ""
@@ -81,261 +68,231 @@ msgid ""
 "Так, добавив класс любой ссылке на сайте, клики по ней будут считаться. "
 "Например, из сайдбара или где угодно еще."
 msgstr ""
-"whether to add jQuery script, that will change the URLs of all links (not "
-"only in the content), that have the specified class of the  \"html class\" "
-"option. Thus, clicks on links all over the site, will be considered."
 
 #: admin.php:64
 msgid "включить виджет WordPress?"
-msgstr "enable WordPress widget?"
+msgstr ""
 
 #: admin.php:69 admin.php:107
 msgid "Сохранить изменения"
-msgstr "Save changes"
+msgstr ""
 
 #: admin.php:70
 msgid "Сбросить настройки на начальные"
-msgstr "Reset to defaults"
+msgstr ""
 
 #: admin.php:70
 msgid "Точно сбрасываем настройки на начальные?"
-msgstr "Sure to reset settings?"
+msgstr ""
 
 #: admin.php:85
 msgid "Редактирование ссылки"
-msgstr "Link editing"
+msgstr ""
 
 #: admin.php:97 admin.php:192
 msgid "Клики"
-msgstr "Clicks"
+msgstr ""
 
 #: admin.php:98
 msgid "Размер Файла"
-msgstr "File size"
+msgstr ""
 
 #: admin.php:99
 msgid "Название Файла"
-msgstr "File name"
+msgstr ""
 
 #: admin.php:100
 msgid "Заголовок Файла"
-msgstr "File title"
+msgstr ""
 
 #: admin.php:101
 msgid "Описание Файла"
-msgstr "File description"
+msgstr ""
 
 #: admin.php:102
 msgid "Ссылка на Файл"
-msgstr "Link to file"
+msgstr ""
 
 #: admin.php:147
 msgid "Страница статистики Kama Click Counter"
-msgstr "Kama Click Counter Statistics"
+msgstr ""
 
 #: admin.php:147
 msgid "Настройки Плагина"
-msgstr "Plugin Settings"
+msgstr ""
 
 #: admin.php:158
 msgid "Очистить фильтр:"
-msgstr "Clear out the filter:"
+msgstr ""
 
 #: admin.php:159
 msgid "впишите часть URL..."
-msgstr "type any part of URL..."
+msgstr ""
 
 #: admin.php:167
 msgid "Сюда"
-msgstr "Here"
+msgstr ""
 
 #: admin.php:167
 msgid "Туда"
-msgstr "There"
+msgstr ""
 
 #: admin.php:181
 msgid "Сортировать"
-msgstr "Sort"
+msgstr ""
 
 #: admin.php:191
 msgid "Файл"
-msgstr "File"
+msgstr ""
 
 #: admin.php:193
 msgid "Кликов/день"
-msgstr "Clicks/day"
+msgstr ""
 
 #: admin.php:194
 msgid "Размер"
-msgstr "Size"
+msgstr ""
 
 #: admin.php:196 admin.php:221
 msgid "Пост"
-msgstr "Post"
+msgstr ""
 
 #: admin.php:198
 msgid "Аттач"
-msgstr "Attach"
+msgstr ""
 
 #: admin.php:199
 msgid "Добавлен"
-msgstr "Added"
+msgstr ""
 
 #: admin.php:200
 msgid "Посл. клик"
-msgstr "Last click"
+msgstr ""
 
 #: admin.php:215 admin.php:222
 msgid "Ссылка"
-msgstr "Link"
+msgstr ""
 
 #: admin.php:217
 msgid "Найти аналоги"
-msgstr "Find similar"
+msgstr ""
 
 #: admin.php:219
 msgid "Изменить"
-msgstr "Edit"
+msgstr ""
 
 #: admin.php:220
 msgid "Удалить"
-msgstr "Delete"
+msgstr ""
 
 #: admin.php:235
 msgid "да"
-msgstr "yes"
+msgstr ""
 
 #: admin.php:240
 msgid "УДАЛИТЬ выбранные ссылки"
-msgstr "DELETE selected links"
+msgstr ""
 
 #: admin_functions.php:7
 msgid "Теги, которые можно использовать в шаблоне:"
-msgstr "Shortcodes that can be used in template:"
+msgstr ""
 
 #: admin_functions.php:8
 msgid "[icon_url] - УРЛ на иконку к файлу"
-msgstr "[icon_url] - URL to file icon"
+msgstr ""
 
 #: admin_functions.php:9
 msgid "[link_url] - УРЛ на закачку"
-msgstr "[link_url] - URL to download"
+msgstr ""
 
 #: admin_functions.php:10
 msgid "[link_name] - название файла"
-msgstr "[link_name]"
+msgstr ""
 
 #: admin_functions.php:11
 msgid "[link_title] - заголовок файла"
-msgstr "[link_title]"
+msgstr ""
 
 #: admin_functions.php:12
 msgid "[link_clicks] - количество скачиваний"
-msgstr "[link_clicks] - number of clicks"
+msgstr ""
 
 #: admin_functions.php:13
 msgid "[file_size] - размер файла"
-msgstr "[file_size]"
+msgstr ""
 
 #: admin_functions.php:14
 msgid "[link_date:d.M.Y] - дата в формате \"d.M.Y\""
-msgstr "[link_date:d.M.Y] - date in \"d.M.Y\"  format"
+msgstr ""
 
 #: admin_functions.php:15
 msgid "[link_description] - описание файла"
-msgstr "[link_description]"
+msgstr ""
 
 #: admin_functions.php:16
 msgid "[edit_link] - УРЛ на редактирование ссылки"
-msgstr "[edit_link] - URL to edit link in admin"
+msgstr ""
 
-#: kama_click_counter.php:274 kama_click_counter.php:276
+#: kama_click_counter.php:276 kama_click_counter.php:278
 msgid "кликов:"
-msgstr "clicks:"
+msgstr ""
 
-#: kama_click_counter.php:356
+#: kama_click_counter.php:358
 msgid "редактировать"
-msgstr "edit"
+msgstr ""
 
-#: kama_click_counter.php:384
+#: kama_click_counter.php:386
 msgid "Настройки"
-msgstr "Settings"
+msgstr ""
 
-#: kama_click_counter.php:385
+#: kama_click_counter.php:387
 msgid "Статистика"
-msgstr "Statistics"
+msgstr ""
 
 #: widget.php:13
 msgid "KCC: Топ Загрузок"
-msgstr "KCC: Top Downloads"
+msgstr ""
 
 #: widget.php:14
 msgid "Виджет Kama Click Counter"
-msgstr "Kama Click Counter Widget"
+msgstr ""
 
 #: widget.php:82
 msgid "Топ загрузок"
-msgstr "Top Downloads"
+msgstr ""
 
 #: widget.php:94
 msgid "Заголовок:"
-msgstr "Title:"
+msgstr ""
 
 #: widget.php:99
 msgid "сколко ссылок показыать?"
-msgstr "how many links to show?"
+msgstr ""
 
 #: widget.php:103
 msgid "все клики"
-msgstr "all clicks"
+msgstr ""
 
 #: widget.php:104
 msgid "кликов в день"
-msgstr "clicks per day"
+msgstr ""
 
 #: widget.php:105
 msgid "как сортировать результат?"
-msgstr "how to sort the result?"
+msgstr ""
 
 #: widget.php:108
 msgid "показывать ссылки позднее этой даты (пр. 2014-08-09)"
-msgstr "show links older then this data (ex. 2014-08-09)"
+msgstr ""
 
 #: widget.php:112
 msgid "выводить только загрузки, а не все ссылки?"
-msgstr "display only downloads, but not all links?"
+msgstr ""
 
 #: widget.php:117
 msgid "Шаблон:"
-msgstr "Out template:"
+msgstr ""
 
 #: widget.php:123
 msgid "CSS шаблона:"
-msgstr "Template CSS:"
-
-#~ msgid "Заголовок"
-#~ msgstr "Title"
-
-#~ msgid "Title:"
-#~ msgstr "Title:"
-
-#~ msgid "All clicks"
-#~ msgstr "All clicks"
-
-#~ msgid "Clicks per day"
-#~ msgstr "Clicks per day"
-
-#~ msgid "Out template:"
-#~ msgstr "Out template:"
-
-#~ msgid "Template CSS:"
-#~ msgstr "Template CSS:"
-
-#~ msgid "how many links to show?"
-#~ msgstr "how many links to show?"
-
-#~ msgid "results sort option"
-#~ msgstr "results sort option"
-
-#~ msgid "show links older then this data (2014-08-09)"
-#~ msgstr "show links older then this data (2014-08-09)"
+msgstr ""

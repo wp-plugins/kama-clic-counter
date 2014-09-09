@@ -83,7 +83,16 @@ if( isset($_GET['options']) ){ ?>
 elseif( isset($_GET['edit_link']) ) { ?>
 
 <h2><?php _e('Редактирование ссылки', 'kcc') ?></h2>
-<p><a class="button" href="<?php echo preg_replace('@&edit_link=[0-9]+@', '', $_SERVER['REQUEST_URI']);?>">← <?php _e('Вернуться к статистике', 'kcc') ?></a></p>
+<p>
+	<?php 
+	$referer = preg_replace('~https?://[^/]+~', '', $_SERVER['HTTP_REFERER']); //вырезаем домен
+	$stat    = preg_replace('@&edit_link=[0-9]+@', '', $_SERVER['REQUEST_URI']);
+
+	echo '<a class="button" href="'. $stat .'">← '. __('Вернуться к статистике', 'kcc') .'</a>';		
+	if( $referer && ($referer != $stat) )
+		echo '<a class="button" href="'. $referer .'">← '. __('Вернуться назад', 'kcc') .'</a>';
+	?>
+</p>
 
 <?php
 global $wpdb;

@@ -3,7 +3,7 @@
 Plugin Name: Kama Click Counter
 Plugin URI: http://wp-kama.ru/?p=430
 Description: Подсчет загрузок файла и кликов по ссылке. Используйте в тексте шоткод <code>[download url="URL"]</code> или добавьте class <code>count</code> к ссылке - <code>&lt;a class=&quot;count&quot; href=&quot;ссылка&quot;&gt;текст&lt;/a&gt;</code>
-Version: 3.2.1
+Version: 3.2.2
 Author: Kama
 Author URI: http://wp-kama.ru/
 */
