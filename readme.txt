@@ -45,5 +45,8 @@ In Order to upgrade to version 3.0 or higher you need update content shortcodes 
 
 == Changelog ==
 
+= 3.2.1 =
+Set autoreplace old shortcodes to new in DB during update: [download=] [download url=]
+
 = 3.2 =
 Widget has been added
