@@ -3,7 +3,7 @@
 Plugin Name: Kama Click Counter
 Plugin URI: http://wp-kama.ru/?p=430
 Description: Подсчет загрузок файла и кликов по ссылке. Используйте в тексте шоткод <code>[download url="URL"]</code> или добавьте class <code>count</code> к ссылке - <code>&lt;a class=&quot;count&quot; href=&quot;ссылка&quot;&gt;текст&lt;/a&gt;</code>
-Version: 3.2.2
+Version: 3.2.3
 Author: Kama
 Author URI: http://wp-kama.ru/
 */
@@ -12,7 +12,7 @@ Author URI: http://wp-kama.ru/
 add_action('plugins_loaded', array('KCC', 'instance') );
 
 // активация плагина
-register_activation_hook( __FILE__, function(){ KCC::instance()->activation(); } );
+register_activation_hook( __FILE__, create_function('', 'KCC::instance()->activation();') );
 
 
 // Плагин
@@ -61,7 +61,7 @@ class KCC {
 			
 		if( $this->opt['links_class'] && $this->opt['js_count'] ){
 			add_action('wp_footer', array($this, 'add_script_to_footer'), 99);
-			add_action('wp_enqueue_scripts', function(){ wp_enqueue_script('jquery'); }, -10 ); // early jquery enqueue, in order it could be changed
+			add_action('wp_enqueue_scripts', create_function('', 'wp_enqueue_script("jquery");'), -10 ); // early jquery enqueue, in order it could be changed
 		}
 		
 		// добавляем шоткод загрузок
@@ -441,33 +441,38 @@ class KCC {
 			update_option( self::OPT_NAME, $opt );
 			
 			if( $this->opt = get_option( self::OPT_NAME ) )
-				$alert = 'Настройки сохранены.';
+				$alert = __('Настройки сохранены.', 'kcc');
 			else
-				$alert = 'Ошибка: Не удалось обновить настройки!';
+				$alert = __('Ошибка: не удалось обновить настройки!', 'kcc');
 		}
 		elseif( isset( $_POST['reset'] ) ){
 			$this->set_def_options();
-			$alert = 'Настройки сброшены на начальные!';
+			$alert = __('Настройки сброшены на начальные!', 'kcc');
 		}
 		elseif( isset($_POST['update_link']) ){
-			unset($_POST['update_link']);
-			if( $this->update_link($_POST['link_id'], $_POST) ) $alert = 'Ссылка обновлена!';
+			$id   = (int) $_POST['link_id'];
+			$data = wp_unslash( $_POST );
+			unset( $data['update_link'], $data['local_referer'] );
+			
+			$alert = $this->update_link( $id, $data ) ? __('Ссылка обновлена!', 'kcc') : __('Не удалось обновить ссылку!', 'kcc');
 		}
 		elseif( $_POST['delete_link_id'] ){
-			if( $this->delete_links($_POST['delete_link_id']) ) $alert = 'Выбранные ссылки удалены!';
-			else $alert = 'Ничего <b>не удалено</b>!';
+			if( $this->delete_links($_POST['delete_link_id']) ) $alert = __('Выбранные ссылки удалены!', 'kcc');
+			else $alert = __('Ничего <b>не удалено</b>!', 'kcc');
 		}
 		
 		
 		include $this->plugin_dir_path . '/admin.php';
 	}
 	
-	function update_link($id, $data){
+	function update_link( $id, $data ){
 		global $wpdb;
-		$data = wp_unslash( $data );
+		$id = (int) $id;
+		
 		$query = $wpdb->update( $this->table_name, $data, array( 'link_id' => $id ) );
 		
-		if( $data['attach_id']>0 ){ // обновление вложения, если оно есть
+		// обновление вложения, если оно есть
+		if( $data['attach_id'] > 0 ){
 			$up_data = array('post_title' => $data['link_title'], 'post_content' => $data['link_description']);
 			$rrr = $wpdb->update( $wpdb->posts, $up_data, array( 'ID' => $data['attach_id'] ) );
 		}
@@ -476,7 +481,7 @@ class KCC {
 	}
 	
 	# Удаление ссылок из БД по переданному массиву ID-шек
-	function delete_links($array_ids=array()){
+	function delete_links( $array_ids = array() ){
 		global $wpdb;
 		foreach( $array_ids as $k=>$id ) // килл пустые элемены
 			if( !trim($id) ) unset( $array_ids[$k] );
@@ -590,17 +595,11 @@ class KCC {
 		# перенаправляем
 		$url = $_GET[ self::COUNT_KEY ];
 		
-		if( $is_IIS ){
-			header("Refresh:0;url=$url");
-		}
-		elseif( headers_sent() ){
+		if( headers_sent() )
 			print "<script>location.replace('$url');</script>";
-		} 
-		else {
-			header("Location: $url");
-			header("Status: 303");		
-		}
-
+		else
+			wp_redirect( $url, 303 );
+			
 		exit;
 	}
 	

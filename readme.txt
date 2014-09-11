@@ -45,6 +45,12 @@ In Order to upgrade to version 3.0 or higher you need update content shortcodes 
 
 == Changelog ==
 
+= 3.2.3 =
+fixed: redirects to https doesn't worked correctly
+fixed: PHP less than 5.3 support
+fixed: go back button on "edit link" admin page
+fixed: localization
+
 = 3.2.2 =
 Added: "go back" button on "edit link" admin page
 

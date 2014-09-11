@@ -85,11 +85,13 @@ elseif( isset($_GET['edit_link']) ) { ?>
 <h2><?php _e('Редактирование ссылки', 'kcc') ?></h2>
 <p>
 	<?php 
-	$referer = preg_replace('~https?://[^/]+~', '', $_SERVER['HTTP_REFERER']); //вырезаем домен
-	$stat    = preg_replace('@&edit_link=[0-9]+@', '', $_SERVER['REQUEST_URI']);
+	$stat    = $_SERVER['REQUEST_URI'];
 
 	echo '<a class="button" href="'. $stat .'">← '. __('Вернуться к статистике', 'kcc') .'</a>';		
-	if( $referer && ($referer != $stat) )
+	
+	$referer = $_POST['local_referer'] ? $_POST['local_referer'] : preg_replace('~https?://[^/]+~', '', $_SERVER['HTTP_REFERER']); //вырезаем домен
+	if( $referer == $stat )	$referer = '';
+	if( $referer )
 		echo '<a class="button" href="'. $referer .'">← '. __('Вернуться назад', 'kcc') .'</a>';
 	?>
 </p>
@@ -102,18 +104,20 @@ $icon_link = $this->get_icon_url( $link->link_url );
  ?>
 
 <form style="position:relative;width:900px;" method="post" action="">
-<img style="position:absolute;top:-50px;right:350px;width:70px;" src="<?php echo $icon_link?>" />
-<p><input type='text' style='width:100px;' name='link_clicks' value='<?php echo $link->link_clicks?>' /> ← <?php _e('Клики', 'kcc') ?></p>
-<p><input type='text' style='width:100px;' name='file_size' value='<?php echo $link->file_size?>' /> ← <?php _e('Размер Файла', 'kcc') ?></p>
-<p><input type='text' style='width:600px;' name='link_name' value='<?php echo $link->link_name?>' /> ← <?php _e('Название Файла', 'kcc') ?></p>
-<p><input type='text' style='width:600px;' name='link_title' value='<?php echo $link->link_title?>' /> ← <?php _e('Заголовок Файла', 'kcc') ?></p>
-<p><textarea type='text' style='width:600px;height:70px;' name='link_description' ><?php echo stripslashes($link->link_description) ?></textarea> ← <?php _e('Описание Файла', 'kcc') ?></p>
-<p><input type='text' style='width:600px;' name='link_url' value='<?php echo $link->link_url?>' readonly='readonly' /> ← <?php _e('Ссылка на Файл', 'kcc') ?></p>
+	<input type="hidden" name="local_referer" value="<?php echo $referer ?>" />
+	
+	<img style="position:absolute;top:-50px;right:350px;width:70px;" src="<?php echo $icon_link?>" />
+	<p><input type='text' style='width:100px;' name='link_clicks' value='<?php echo $link->link_clicks?>' /> ← <?php _e('Клики', 'kcc') ?></p>
+	<p><input type='text' style='width:100px;' name='file_size' value='<?php echo $link->file_size?>' /> ← <?php _e('Размер Файла', 'kcc') ?></p>
+	<p><input type='text' style='width:600px;' name='link_name' value='<?php echo $link->link_name?>' /> ← <?php _e('Название Файла', 'kcc') ?></p>
+	<p><input type='text' style='width:600px;' name='link_title' value='<?php echo $link->link_title?>' /> ← <?php _e('Заголовок Файла', 'kcc') ?></p>
+	<p><textarea type='text' style='width:600px;height:70px;' name='link_description' ><?php echo stripslashes($link->link_description) ?></textarea> ← <?php _e('Описание Файла', 'kcc') ?></p>
+	<p><input type='text' style='width:600px;' name='link_url' value='<?php echo $link->link_url?>' readonly='readonly' /> ← <?php _e('Ссылка на Файл', 'kcc') ?></p>
 
-<input type='hidden' name='link_id' value='<?php echo $_GET['edit_link'] ?>' />
-<input type='hidden' name='attach_id' value='<?php echo $link->attach_id ?>' />
- 
-<p><input type='submit' name='update_link' class='button-primary' value='<?php _e('Сохранить изменения', 'kcc') ?>' /></p>
+	<input type='hidden' name='link_id' value='<?php echo $_GET['edit_link'] ?>' />
+	<input type='hidden' name='attach_id' value='<?php echo $link->attach_id ?>' />
+	 
+	<p><input type='submit' name='update_link' class='button-primary' value='<?php _e('Сохранить изменения', 'kcc') ?>' /></p>
 </form>
 <?php }
 
