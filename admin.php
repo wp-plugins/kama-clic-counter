@@ -85,7 +85,7 @@ elseif( isset($_GET['edit_link']) ) { ?>
 <h2><?php _e('Редактирование ссылки', 'kcc') ?></h2>
 <p>
 	<?php 
-	$stat    = $_SERVER['REQUEST_URI'];
+	$stat = remove_query_arg('edit_link', $_SERVER['REQUEST_URI'] );
 
 	echo '<a class="button" href="'. $stat .'">← '. __('Вернуться к статистике', 'kcc') .'</a>';		
 	
