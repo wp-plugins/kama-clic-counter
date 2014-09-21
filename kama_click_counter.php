@@ -3,7 +3,7 @@
 Plugin Name: Kama Click Counter
 Plugin URI: http://wp-kama.ru/?p=430
 Description: Подсчет загрузок файла и кликов по ссылке. Используйте в тексте шоткод <code>[download url="URL"]</code> или добавьте class <code>count</code> к ссылке - <code>&lt;a class=&quot;count&quot; href=&quot;ссылка&quot;&gt;текст&lt;/a&gt;</code>
-Version: 3.2.3.1
+Version: 3.2.3.2
 Author: Kama
 Author URI: http://wp-kama.ru/
 */
@@ -588,18 +588,20 @@ class KCC {
 			return;
 			
 		global $is_IIS;
+		if ( !$is_IIS && php_sapi_name() != 'cgi-fcgi' )
+			status_header($status); // This causes problems on IIS and some FastCGI setups
 			
 		# считаем
 		$this->do_count( $_SERVER['REQUEST_URI'] );
-
+		
 		# перенаправляем
 		$url = $_GET[ self::COUNT_KEY ];
-		
+
 		if( headers_sent() )
 			print "<script>location.replace('$url');</script>";
 		else
-			wp_redirect( $url, 303 );
-			
+			header("Location: $url", true, 303); // wp_redirect() не подходит...
+		
 		exit;
 	}
 	
