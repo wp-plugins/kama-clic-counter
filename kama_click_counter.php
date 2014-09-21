@@ -109,7 +109,7 @@ class KCC {
 		$link_url = $url_data[ self::COUNT_KEY ];
 		$in_post = (int) $url_data[ self::PID_KEY ];
 		$downloads = isset( $url_data['download'] ) ? 'yes' : '';
-		
+
 		if( $this->opt['in_post'] )
 			$AND_in_post  = 'AND in_post='. $in_post;
 
@@ -164,14 +164,19 @@ class KCC {
 	// возвращает array( параметры переданой строки )
 	function kcc_parce_url( $url ){
 		preg_match('~\?([^#]+)~', $url, $query );
-		wp_parse_str( $query[1], $url_args );
+		// parse_str( $query[1], $url_args );
+		# разбираем строку parse_str() не подходит
+		foreach( explode('&', $query[1] ) as $part ){
+			$t = array_map('trim', explode('=', $part ) );
+			$url_args[ $t[0] ] = $t[1];
+		}
 
 		$real_url = trim( $url_args[ self::COUNT_KEY ] ); // реальная ссылка
 		
 		if( ! $real_url )
 			return array();
 		
-		$real_url = urldecode( $real_url );
+		// $real_url = urldecode( $real_url );
 		$real_url = preg_replace ("/#.*$/",'',$real_url); // delete the #anchor part
 		
 		// добвами ссылку на сайт если это относительная ссылка
@@ -180,7 +185,6 @@ class KCC {
 		
 		$url_args[ self::COUNT_KEY ] = $real_url;
 		$url_args[ self::PID_KEY ] = (int) $url_args[ self::PID_KEY ];
-		
 		return $url_args;
 	}
 
@@ -584,10 +588,13 @@ class KCC {
 	/* redirect
 	------------------------------------------------------------- */
 	function redirect(){
-		if( ! $_GET[ self::COUNT_KEY ] || ! $_SERVER['HTTP_REFERER'] )
+		if( ! $_GET[ self::COUNT_KEY ] )
 			return;
+		if( ! $_SERVER['HTTP_REFERER'] )
+			die(__('Запрещается прямое использвьание этой ссылки', 'kcc'));
 			
 		global $is_IIS;
+		
 		if ( !$is_IIS && php_sapi_name() != 'cgi-fcgi' )
 			status_header($status); // This causes problems on IIS and some FastCGI setups
 			

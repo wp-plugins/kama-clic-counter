@@ -47,6 +47,7 @@ In Order to upgrade to version 3.0 or higher you need update content shortcodes 
 
 = 3.2.3.2 =
 fixed: didn't correctly redirected to url with " " character
+added: round "clicks per day" on admin statistics page to one decimal digit
 
 = 3.2.3.1 =
 fixed: "back to stat" link on "edit link" admin page

@@ -221,7 +221,7 @@ function head_text( $text, $col_name ){
 		$cur_time = (time() + (get_option('gmt_offset')*3600));
 		foreach( $links as $link ){
 			$alt = (++$i%2) ? 'class="alternate"' : '';
-			$clicks_per_day = round( (int) $link->link_clicks / ( ( $cur_time-strtotime($link->link_date) ) / (3600*24) ) );
+			$clicks_per_day = round( ((int) $link->link_clicks / ( ( $cur_time-strtotime($link->link_date) ) / (3600*24) )), 1 );
 		?>
 			<tr <?php echo $alt?>> 
 				<th scope="row" class="check-column"><input type="checkbox" name="delete_link_id[]" value="<?php echo $link->link_id ?>" /></th>
