@@ -222,6 +222,9 @@ function head_text( $text, $col_name ){
 		foreach( $links as $link ){
 			$alt = (++$i%2) ? 'class="alternate"' : '';
 			$clicks_per_day = round( ((int) $link->link_clicks / ( ( $cur_time-strtotime($link->link_date) ) / (3600*24) )), 1 );
+			
+			$in_post = ( $this->opt['in_post'] && $link->in_post ) ? get_post( $link->in_post ) : 0;
+			$in_post_permalink = get_permalink( $in_post->ID );
 		?>
 			<tr <?php echo $alt?>> 
 				<th scope="row" class="check-column"><input type="checkbox" name="delete_link_id[]" value="<?php echo $link->link_id ?>" /></th>
@@ -231,7 +234,7 @@ function head_text( $text, $col_name ){
 					<div class='row-actions'>
 						<a href="<?php echo $_SERVER['REQUEST_URI'] ?>&edit_link=<?php echo $link->link_id ?>"><?php _e('Изменить', 'kcc') ?></a> 
 						| <a href="javascript:void(0);" onclick="jQuery('#dellnk_input').val('<?php echo $link->link_id ?>'); jQuery('[name=kcc_stat]').submit();"><?php _e('Удалить', 'kcc') ?></a>
-						<?php if( $link->in_post ) echo ' | <a href="'. get_permalink($link->in_post) .'">'. __('Пост', 'kcc') .'</a> '; ?>
+						<?php if( $in_post ) echo ' | <a href="'. $in_post_permalink .'" title="'. esc_attr( $in_post->post_title ) .'">'. __('Пост', 'kcc') .'</a> '; ?>
 						| <a href="<?php echo $link->link_url ?>"><?php _e('Ссылка', 'kcc') ?></a>
 						| <span style="color:#999;"><?php echo $link->link_title ?></span>
 					</div>
@@ -239,8 +242,8 @@ function head_text( $text, $col_name ){
 				<td><?php echo $link->link_clicks ?></td>
 				<td><?php echo $clicks_per_day ?></td>
 				<td><?php echo $link->file_size ?></td>
-				<?php if($this->opt['in_post']){ ?>
-					<td><?php echo $link->in_post ? '<a href='.get_permalink($link->in_post).'>'.$link->in_post.'</a>' : '' ?></td>
+				<?php if( $this->opt['in_post'] ){ ?>
+					<td><?php echo $link->in_post ? '<a href="'. $in_post_permalink .'" title="'. esc_attr( $in_post->post_title ) .'">'. $link->in_post .'</a>' : '' ?></td>
 				<?php } ?>
 				<td><?php echo ($link->attach_id) ? "<a href='/wp-admin/media.php?action=edit&attachment_id={$link->attach_id}'>{$link->attach_id}</a>":'' ?></td>
 				<td><?php echo mysql2date('d-m-Y', $link->link_date) ?></td>
