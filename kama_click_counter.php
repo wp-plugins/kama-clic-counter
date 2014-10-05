@@ -409,7 +409,7 @@ class KCC {
 [edit_link]
 
 <style type="text/css">
-.kcc_block{ padding: 15px 10px; cursor:pointer; transition:background-color 0.4s; }
+.kcc_block{ padding:15px 10px; margin-bottom:20px; cursor:pointer; transition:background-color 0.4s; }
 .kcc_block:before{ clear:both; } 
 .kcc_block a { text-decoration:none; display:block; font-size:200%; margin:10px; } 
 .kcc_block img{ width:55px; height:auto; float:left; margin:0 25px 0 5px;border:0px!important; box-shadow:none!important; } 
