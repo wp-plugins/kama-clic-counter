@@ -7,16 +7,15 @@ Stable tag: 3.2.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Count clicks on any link on site. Create pretty file download block in content. Widget support.
-
+Counts clicks on any link on your site. Creates a pretty file download block in the content. Widget support.
 
 == Description ==
 
-Count clicks on any link on your site. Create pretty file download block in content. There is TinyMce button for adding file download shortcode. There is customizable widget, that allows you output "Top Downloads" list.
+Counts clicks on any link on your site. Creates a pretty file download block in the content. There is a TinyMce button for adding the file download shortcode. There is a customizable widget that allows you to output the "Top Downloads" list.
 
-Using this plugin you will have statistics on clicks on your files or any other link (not file).
+This plugin gives you statistics on clicks on your files or any other links (not file).
 
-There is no unnecessary file uploads functionality. All files are uploaded with standart wordpress media library.
+There are no unnecessary file upload functionality. All files are uploaded with a standard WordPress media library.
 
 Localisation: English, Russian
 
@@ -44,6 +43,10 @@ Just customize CSS styles in plugin options page. Also you can add css styles in
 In Order to upgrade to version 3.0 or higher you need update content shortcodes from [download=<url>] to [download url=<url>]. Do this with that simple sql query, for it do once this PHP code: <?php global $wpdb; $wpdb->query("UPDATE $wpdb->posts SET post_content=REPLACE(post_content, '[download=', '[download url=')"); ?>
 
 == Changelog ==
+
+= 3.2.3.3 =
+added: jQuery links become hidden. All jQuery affected links have #kcc anchor and onclick attr with countclick url
+fixed: error with parse_url part. If url had "=" it was exploded...
 
 = 3.2.3.2 =
 fixed: didn't correctly redirected to url with " " character

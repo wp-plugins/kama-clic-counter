@@ -3,7 +3,7 @@
 Plugin Name: Kama Click Counter
 Plugin URI: http://wp-kama.ru/?p=430
 Description: Подсчет загрузок файла и кликов по ссылке. Используйте в тексте шоткод <code>[download url="URL"]</code> или добавьте class <code>count</code> к ссылке - <code>&lt;a class=&quot;count&quot; href=&quot;ссылка&quot;&gt;текст&lt;/a&gt;</code>
-Version: 3.2.3.2
+Version: 3.2.3.3
 Author: Kama
 Author URI: http://wp-kama.ru/
 */
@@ -88,7 +88,10 @@ class KCC {
 					var href = jQuery(this).attr('href');
 					// only for not modified links
 					if( ! /<?php echo self::COUNT_KEY ?>/g.exec( href ) )
-						jQuery(this).attr('href', '<?php echo $this->redirect_preffix ?>' + href ); 
+						jQuery(this).attr( { 
+							onclick: "this.href='<?php echo $this->redirect_preffix ?>"+ href +"'",
+							href: href +'#kcc'
+						} ); 
 				});
 			} 
 			catch(er){ console.log( er ); }
@@ -164,28 +167,29 @@ class KCC {
 	// возвращает array( параметры переданой строки )
 	function kcc_parce_url( $url ){
 		preg_match('~\?([^#]+)~', $url, $query );
-		// parse_str( $query[1], $url_args );
+
+		//parse_str( $query[1], $url_args );
 		# разбираем строку parse_str() не подходит
+		$url_args = array();
 		foreach( explode('&', $query[1] ) as $part ){
-			$t = array_map('trim', explode('=', $part ) );
+			$t = array_map('trim', explode('=', $part, 2) ); // 2 для случаев, когда значение параметра само содержит "="
 			$url_args[ $t[0] ] = $t[1];
 		}
-
-		$real_url = trim( $url_args[ self::COUNT_KEY ] ); // реальная ссылка
 		
-		if( ! $real_url )
+		if( ! $real_url = $url_args[ self::COUNT_KEY ] )
 			return array();
 		
-		// $real_url = urldecode( $real_url );
-		$real_url = preg_replace ("/#.*$/",'',$real_url); // delete the #anchor part
+		$real_url = preg_replace('/#.*$/', '', $real_url); // delete the #anchor part
 		
-		// добвами ссылку на сайт если это относительная ссылка
+		// ссылка на сайт, для относительных ссылок
 		if( ! preg_match("@^(https?|ftp)://@i", $real_url) )			
 			$real_url = home_url() . ( preg_match("@^/@", $real_url) ? '' : '/' ) . $real_url;
 		
-		$url_args[ self::COUNT_KEY ] = $real_url;
-		$url_args[ self::PID_KEY ] = (int) $url_args[ self::PID_KEY ];
-		return $url_args;
+		$return = array(
+			self::COUNT_KEY => $real_url,
+			self::PID_KEY   => (int) $url_args[ self::PID_KEY ]
+		);
+		return $return;
 	}
 
 	function is_file( $url ){
@@ -588,7 +592,7 @@ class KCC {
 	/* redirect
 	------------------------------------------------------------- */
 	function redirect(){
-		if( ! $_GET[ self::COUNT_KEY ] )
+		if( ! $url = $_GET[ self::COUNT_KEY ] )
 			return;
 		if( ! $_SERVER['HTTP_REFERER'] )
 			die(__('Запрещается прямое использвьание этой ссылки', 'kcc'));
@@ -602,8 +606,6 @@ class KCC {
 		$this->do_count( $_SERVER['REQUEST_URI'] );
 		
 		# перенаправляем
-		$url = $_GET[ self::COUNT_KEY ];
-
 		if( headers_sent() )
 			print "<script>location.replace('$url');</script>";
 		else
