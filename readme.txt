@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: Kama
+Contributors: Tkama
 Tags: analytics, statistics, count, count clicks, clicks, counter, download, downloads, link, kama
 Requires at least: 3.6
 Tested up to: 4.0
