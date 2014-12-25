@@ -1,4 +1,4 @@
-<div class="wrap"> 
+<div class="wrap">
 	<div id="icon-link-manager" class="icon32"><br /></div> 
 
 <style type="text/css">
