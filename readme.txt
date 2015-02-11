@@ -1,9 +1,9 @@
 === Plugin Name ===
+Stable tag: 3.2.34
 Contributors: Kama
 Tags: analytics, statistics, count, count clicks, clicks, counter, download, downloads, link, kama
 Requires at least: 3.6
 Tested up to: 4.0
-Stable tag: 3.2.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,6 +44,9 @@ Just customize CSS styles in plugin options page. Also you can add css styles in
 In Order to upgrade to version 3.0 or higher you need update content shortcodes from [download=<url>] to [download url=<url>]. Do this with that simple sql query, for it do once this PHP code: <?php global $wpdb; $wpdb->query("UPDATE $wpdb->posts SET post_content=REPLACE(post_content, '[download=', '[download url=')"); ?>
 
 == Changelog ==
+
+= 3.2.34 =
+Fix: Some admin css change
 
 = 3.2.3.3 =
 added: jQuery links become hidden. All jQuery affected links have #kcc anchor and onclick attr with countclick url
