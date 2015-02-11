@@ -157,7 +157,7 @@ $all_sql = preg_replace('@\*@is','count(*)',$all_sql,1);
 $all = $wpdb->get_var($all_sql);
 ?>
 
-<h2 style="display:inline-block;"><?php _e('Страница статистики Kama Click Counter', 'kcc') ?> <a class="button-primary" style="display:inline-block; margin-left: 30px; margin-top: -29px; float: right;" href="<?php echo $_SERVER['REQUEST_URI'] ?>&options"><?php _e('Настройки Плагина', 'kcc') ?></a></h2>
+<h2 style="display:inline-block;"><?php _e('Страница статистики Kama Click Counter', 'kcc') ?> <a class="button-primary" style="display:inline-block; margin-left:1em; float: right;" href="<?php echo $_SERVER['REQUEST_URI'] ?>&options"><?php _e('Настройки Плагина', 'kcc') ?></a></h2>
 
 
 

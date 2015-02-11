@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: Tkama
+Contributors: Kama
 Tags: analytics, statistics, count, count clicks, clicks, counter, download, downloads, link, kama
 Requires at least: 3.6
 Tested up to: 4.0
@@ -7,15 +7,16 @@ Stable tag: 3.2.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Counts clicks on any link on your site. Creates a pretty file download block in the content. Widget support.
+Count clicks on any link on site. Create pretty file download block in content. Widget support.
+
 
 == Description ==
 
-Counts clicks on any link on your site. Creates a pretty file download block in the content. There is a TinyMce button for adding the file download shortcode. There is a customizable widget that allows you to output the "Top Downloads" list.
+Count clicks on any link on your site. Create pretty file download block in content. There is TinyMce button for adding file download shortcode. There is customizable widget, that allows you output "Top Downloads" list.
 
-This plugin gives you statistics on clicks on your files or any other links (not file).
+Using this plugin you will have statistics on clicks on your files or any other link (not file).
 
-There are no unnecessary file upload functionality. All files are uploaded with a standard WordPress media library.
+There is no unnecessary file uploads functionality. All files are uploaded with standart wordpress media library.
 
 Localisation: English, Russian
 
