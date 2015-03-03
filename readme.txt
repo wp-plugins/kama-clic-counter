@@ -1,6 +1,6 @@
 === Plugin Name ===
 Stable tag: 3.2.34
-Contributors: Kama
+Contributors: Tkama
 Tags: analytics, statistics, count, count clicks, clicks, counter, download, downloads, link, kama
 Requires at least: 3.6
 Tested up to: 4.0
